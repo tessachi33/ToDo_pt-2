@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 public class TaskTest {
 
+  @Rule
+   public ClearRule clearRule = new ClearRule();
 
   @Test
   public void task_instantiatesCorrectly_true() {
