@@ -1,6 +1,6 @@
 <h1> All tasks </h1>
 <ul>
-#foreach ($task in $tasks)
+#foreach ($task in $category.getTasks())
   <li><a href="/tasks/$task.getId()">$task.getDescription()</a></li>
 #end
 </ul>

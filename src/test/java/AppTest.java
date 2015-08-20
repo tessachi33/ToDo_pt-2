@@ -41,4 +41,28 @@ public void categoryIsDisplayedTest() {
   click("a", withText("View categories"));
   assertThat(pageSource()).contains("Household chores");
 }
+
+@Test
+public void categoryTasksFormIsDisplayed() {
+  goTo("http://localhost:4567/categories/new");
+  fill("#name").with("Shopping");
+  submit(".btn");
+  click("a", withText("View categories"));
+  click("a", withText("Shopping"));
+  click("a", withText("Add a new task"));
+  assertThat(pageSource()).contains("Add a new task to Shopping");
+}
+
+// @Test
+// public void tasksIsAddedAndDisplayed() {
+//   goTo("http://localhost:4567/categories/new");
+//   fill("#name").with("Banking");
+//   submit(".btn");
+//   click("a", withText("View categories"));
+//   click("a", withText("Banking"));
+//   click("a", withText("Add a new task"));
+//   fill("#description").with("Deposit paycheck");
+//   submit(".btn");
+//   assertThat(pageSource()).contains("Deposit paycheck");
+// }
 }
