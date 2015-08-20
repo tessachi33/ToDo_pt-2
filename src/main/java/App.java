@@ -19,12 +19,14 @@ public class App {
    }, new VelocityTemplateEngine());
    // get(/) type of route get this url..
 
-   get("/tasks", (request, response) -> {
-     HashMap<String, Object> model = new HashMap<String, Object>();
-     model.put("tasks", Task.all());
-     model.put("template", "templates/tasks.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
+
+//dont need to display all tasks independently of parent category
+  //  get("/tasks", (request, response) -> {
+  //    HashMap<String, Object> model = new HashMap<String, Object>();
+  //    model.put("tasks", Task.all());
+  //    model.put("template", "templates/tasks.vtl");
+  //     return new ModelAndView(model, layout);
+  //   }, new VelocityTemplateEngine());
     //After they submit the form, this is where they will be taken /tasks.vtl
 
   //  get("tasks/new", (request, response) -> {
